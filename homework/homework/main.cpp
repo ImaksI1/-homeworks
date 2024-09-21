@@ -15,6 +15,7 @@ int main() {
     cin >> a;
     if (a == 1) {
         cout << myCar;
+        cout << "Кількість кінських сил: " << myCar.calculateEngineValue() << endl;
     }
     else {
         CoffeeMachine myCoffeeMachine;

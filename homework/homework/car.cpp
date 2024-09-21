@@ -7,7 +7,8 @@ Car::Car(){
     this->engineVolume = 2.0; 
     this->numberOfSeats = 5;
     this->numberOfCylinders = 4;
-    this->color = "red";
+    this->weight = 1200;
+    this->horsepowers = 0;
 }
 
 string Car::getName() const
@@ -28,16 +29,6 @@ string Car::getModel() const
 void Car::setModel(string carModel)
 {
     this->model = carModel;
-}
-
-string Car::getColor() const
-{
-    return this->color;
-}
-
-void Car::setColor(string carcolor)
-{
-    this->color = carcolor;
 }
 
 double Car::getTankVolume() const
@@ -88,9 +79,10 @@ void Car::setWeight(double weight)
     this->weight = weight;
 }
 
-
-
-
+int Car::calculateEngineValue()
+{
+    return weight / 4 / engineVolume;
+}
 
 
 ostream& operator<<(ostream& a, const Car& car)
@@ -101,5 +93,6 @@ ostream& operator<<(ostream& a, const Car& car)
     a << "Об'єм двигуна: " << car.engineVolume << " літрів" << endl;
     a << "Кількість сидінь: " << car.numberOfSeats << endl;
     a << "Кількість поршнів/циліндрів: " << car.numberOfCylinders << endl;
+    a << "Вага: " << car.weight << endl;
     return a;
 }

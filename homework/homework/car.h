@@ -7,14 +7,15 @@ enum FulerType {
 };
 class Car {
 private:
-    string name;           // Назва виробника
-    string model;          // Модель автомобіля
-    string color;
-    double tankVolume;     // Об'єм бака в літрах
-    double engineVolume;   // Об'єм двигуна в літрах
-    int numberOfSeats;     // Кількість сидінь
-    int numberOfCylinders; // Кількість поршнів/циліндрів
+    string name;           
+    string model;    
+    FulerType Fuel;
+    double tankVolume;     
+    double engineVolume;   
+    int numberOfSeats;     
+    int numberOfCylinders; 
     int weight;
+    int horsepowers;
 public:
     Car();
 
@@ -25,10 +26,6 @@ public:
     string getModel() const;
 
     void setModel(string carModel);
-
-    string getColor() const;
-
-    void setColor(string carcolor);
 
     double getTankVolume() const;
 
@@ -50,5 +47,8 @@ public:
 
     void setWeight(double weight);
 
+    int calculateEngineValue();
+
     friend ostream& operator<<(ostream& a, const Car& car);
+
 };
